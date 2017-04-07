@@ -1,5 +1,7 @@
 package com.dzzxjl.DataCluster;
 
+import java.util.ArrayList;
+
 public class Utils {
 private static double EARTH_RADIUS = 6378.137;    
     
@@ -27,4 +29,23 @@ private static double EARTH_RADIUS = 6378.137;
     	time = Math.round((float)temp * 24 * 3600);
 		return time;    
     }
+    
+    public static StandPoint getStandPoint(ArrayList<Point> list) {
+    	StandPoint standPoint = new StandPoint();
+    	double latitudeSum = 0;
+    	double longtitudeSum = 0;
+    	int i = 0;
+    	for(Point point: list){
+    		System.out.println(i);
+    		System.out.println(point);
+    		latitudeSum = latitudeSum + point.getLatitude();
+    		longtitudeSum = longtitudeSum + point.getLongtitude();
+    		i++;
+    	}
+    	standPoint.setLatitude(latitudeSum / list.size());
+    	standPoint.setLongtitude(longtitudeSum /  list.size());
+    	standPoint.setLeaveTime(list.get(0).getTime());
+    	standPoint.setComeTime(list.get(list.size()-1).getTime());
+    	return standPoint;
+	}
 }

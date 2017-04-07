@@ -31,7 +31,8 @@ public class StandPoint {
 	}
 	@Override
 	public String toString() {
-		return "var marker = new BMap.Marker(new BMap.Point(" + Double.toString(longtitude) + "," + Double.toString(latitude)
-		+ "));" ;
+//		return "var marker = new BMap.Marker(new BMap.Point(" + Double.toString(longtitude) + "," + Double.toString(latitude)
+//		+ "));" ;
+		return latitude + "***" + longtitude;
 	}
 }
