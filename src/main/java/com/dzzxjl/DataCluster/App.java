@@ -14,7 +14,7 @@ import com.mysql.jdbc.Util;
  */
 public class App 
 {
-	
+	//test eclipse git
 	public static int MAX_DISTANCE = 200;
 	public static int MAX_TIME = 2200;
 	/**
