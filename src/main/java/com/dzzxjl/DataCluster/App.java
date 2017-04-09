@@ -19,7 +19,7 @@ public class App
 
 	public static void main( String[] args )
     {
-    	 String filePath = "/Users/dzzxjl/Downloads/test.plt";
+    	 String filePath = "/Users/dzzxjl/Downloads/test3.plt";
     	 try {
              File file=new File(filePath);
              if(file.isFile() && file.exists()){ //判断文件是否存在
@@ -42,12 +42,14 @@ public class App
 	                        point.setLongtitude(Double.parseDouble(lineContent[1]));
 	                        point.setTime(Double.parseDouble(lineContent[4]));
 	                        points.add(point);
+	                        System.out.println(point);
                      }
                      count++;
                  }
-                 System.out.println(points.size());
-//                 for(i = 0;i < points.size();i++){
+                 System.out.println("****" + points.size());
+//                 for(i = 0;i < points.size() - 1;i++){
 //                 	j = i + 1;
+//                 	list = new ArrayList<Point>();
 //                 	while(Utils.getDistance(points.get(i),points.get(j)) < MAX_DISTANCE && j < points.size() - 1){
 //                 		list.add(points.get(j));
 //                 		System.out.println("i:" + i + " j:" + j + "  "
@@ -59,6 +61,7 @@ public class App
 //                 		standPoints.add(Utils.getStandPoint(list));
 //                 	}
 //                 }
+//                 
                  while(i < points.size()){
                 	 j = i + 1;
                 	 flag = 0;
@@ -81,10 +84,9 @@ public class App
                  
                  
                  
-                 
                  for(StandPoint sp :standPoints ){
                  	System.out.println(sp);
-                 	System.out.println("var label = new BMap.Label(\"我是停留点\",{offset:new BMap.Size(20,-10)});");
+                 	System.out.println("var label = new BMap.Label(\"我是停留点"+ (sp.getLeaveTime()-sp.getComeTime())*24*3600 + "\" ,{offset:new BMap.Size(20,-10)});");
                  	System.out.println("marker.setLabel(label);");
                  	System.out.println("map.addOverlay(marker);");
                  }

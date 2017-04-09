@@ -36,16 +36,16 @@ private static double EARTH_RADIUS = 6378.137;
     	double longtitudeSum = 0;
     	int i = 0;
     	for(Point point: list){
-    		System.out.println(i);
-    		System.out.println(point);
+//    		System.out.println(i);
+//    		System.out.println(point);
     		latitudeSum = latitudeSum + point.getLatitude();
     		longtitudeSum = longtitudeSum + point.getLongtitude();
     		i++;
     	}
     	standPoint.setLatitude(latitudeSum / list.size());
     	standPoint.setLongtitude(longtitudeSum /  list.size());
-    	standPoint.setLeaveTime(list.get(0).getTime());
-    	standPoint.setComeTime(list.get(list.size()-1).getTime());
+    	standPoint.setComeTime(list.get(0).getTime());
+    	standPoint.setLeaveTime(list.get(list.size() - 1).getTime());
     	return standPoint;
 	}
 }

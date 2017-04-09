@@ -38,7 +38,7 @@ public class Point {
 	public String toString() {
 		// TODO Auto-generated method stub
 		return "var marker = new BMap.Marker(new BMap.Point(" + Double.toString(longtitude) + "," + Double.toString(latitude)
-		+ "));" ;
+		+ ")); \nmap.addOverlay(marker);";
 	}
 	
 }
